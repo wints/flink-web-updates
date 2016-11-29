@@ -130,7 +130,7 @@ At the most basic level, a Flink program is made up of:
 + **Transformations:** The processing step, when Flink modifies incoming data
 + **Data sink:** Where Flink sends data after processing
 
-<img class="illu" src="{{ site.baseurl }}/img/source-transform-sink-update.png" alt="Source" width="596px" height="110px"/>
+<img class="illu" src="{{ site.baseurl }}/img/source-transform-sink-update.png" alt="Source" width="1000px" height="232px"/>
 
 A well-developed ecosystem is necessary for the efficient movement of data in and out of a Flink program, and Flink supports a wide range of connectors to third-party systems for data sources and sinks.
 
