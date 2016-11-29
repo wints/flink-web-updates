@@ -29,42 +29,42 @@ layout: base
 
   <hr />
 
-  <a style="float:right" href="{{ site.baseurl }}/poweredby.html">See all ></a>
+  <a style="float:right" href="{{ site.baseurl }}/poweredby.html">See more ></a>
 
   <div class="jcarousel">
     <ul>
         <li>
           <div><img src="{{ site.baseurl }}/img/poweredby/alibaba-logo.png" width="175"  alt="Alibaba" /></div>
-          <span>Alibaba goes big with Flink.</span>
+          <!--<span>Alibaba uses Flink for real-time search optimization.</span>-->
 
         </li>
         <li>
           <div><img src="{{ site.baseurl }}/img/poweredby/bouygues-logo.jpg" width="175"  alt="Bouygues" /></div>
-          <span>Bouygues Telecom goes big with Flink.</span>
+          <!-- <span>Bouygues Telecom uses Flink for network monitoring.</span> -->
         </li>
         <li>
           <div><img src="{{ site.baseurl }}/img/poweredby/capital-one-logo.png" width="175"  alt="Capital One" /></div>
-          <span>Capital One goes big with Flink.</span>
+          <!-- <span>Capital One uses Flink for anomaly detection.</span> -->
         </li>
         <li>
           <div><img src="{{ site.baseurl }}/img/poweredby/ericsson-logo.png" width="175"  alt="Ericsson" /></div>
-          <span>Ericsson goes big with Flink.</span>
+          <!-- <span>Ericsson uses Flink for .</span> -->
         </li>
         <li>
           <div><img src="{{ site.baseurl }}/img/poweredby/king-logo.png" width="175" alt="King" /></div>
-          <span>King goes big with Flink.</span>
+          <!-- <span>King uses Flink to power real-time game analytics.</span> -->
         </li>
         <li>
           <div><img src="{{ site.baseurl }}/img/poweredby/otto-group-logo.png" width="175" alt="Otto Group" /></div>
-          <span>Otto Group goes big with Flink.</span>
+          <!-- <span>Otto Group uses Flink for.</span> -->
         </li>
         <li>
           <div><img src="{{ site.baseurl }}/img/poweredby/researchgate-logo.png" width="175" alt="ResearchGate" /></div>
-          <span>ResearchGate goes big with Flink.</span>       
+          <!-- <span>ResearchGate uses Flink for.</span>        -->
         </li>
         <li>
           <div><img src="{{ site.baseurl }}/img/poweredby/zalando-logo.jpg" width="175" alt="Zalando" /></div>
-          <span>Zalando goes big with Flink.</span>
+          <!-- <span>Zalando goes big with Flink.</span> -->
         </li>
     </ul>
   </div>
@@ -75,7 +75,6 @@ layout: base
   </div>
 
 </div>
-
 
 <!-- Updates section -->
 
