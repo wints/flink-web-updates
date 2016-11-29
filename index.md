@@ -3,7 +3,7 @@ title: "Scalable Batch and Stream Data Processing"
 layout: base
 ---
 <div class="row-fluid">
-  
+
   <div class="col-sm-10 col-sm-offset-1 homecontent">
     <p class="lead" markdown="span">Apache Flink®: a production-grade open source stream processing engine for **distributed, high-performing, always-available,** and **accurate** streaming applications</p>
     <a href="{{ site.baseurl }}/introduction.html" class="btn btn-default btn-intro">Introduction to Flink</a>
@@ -18,7 +18,7 @@ layout: base
 
 
 <div class="row front-graphic">
-  <img src="/img/flink-front-graphic.png" width="548px" height="339px" />
+  <img src="/img/flink-front-graphic-update.png" width="616px" height="305px" />
 </div>
 
 
@@ -29,7 +29,7 @@ layout: base
 
   <hr />
 
-  <a style="float:right" href="{{ site.baseurl }}/poweredby.html"><b>See all ></b></a>
+  <a style="float:right" href="{{ site.baseurl }}/poweredby.html">See all ></a>
 
   <div class="jcarousel">
     <ul>
@@ -158,4 +158,3 @@ layout: base
   });
 
 </script>
-
