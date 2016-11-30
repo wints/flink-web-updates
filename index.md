@@ -5,7 +5,7 @@ layout: base
 <div class="row-fluid">
 
   <div class="col-sm-10 col-sm-offset-1 homecontent">
-    <p class="lead" markdown="span">Apache Flink®: a production-grade open-source stream processing engine for **distributed, high-performing, always-available,** and **accurate** streaming applications</p>
+    <p class="lead" markdown="span">Apache Flink® is an open-source stream processing framework for **distributed, high-performing, always-available,** and **accurate** data streaming applications.</p>
     <a href="{{ site.baseurl }}/introduction.html" class="btn btn-default btn-intro">Introduction to Flink</a>
   </div>
 
@@ -18,7 +18,7 @@ layout: base
 
 
 <div class="row front-graphic">
-  <img src="/img/flink-front-graphic-update.png" width="616px" height="305px" />
+  <img src="/img/flink-front-graphic-update.png" width="599px" height="305px" />
 </div>
 
 
