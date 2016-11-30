@@ -5,7 +5,7 @@ layout: base
 <div class="row-fluid">
 
   <div class="col-sm-10 col-sm-offset-1 homecontent">
-    <p class="lead" markdown="span">Apache Flink®: a production-grade open source stream processing engine for **distributed, high-performing, always-available,** and **accurate** streaming applications</p>
+    <p class="lead" markdown="span">Apache Flink®: a production-grade open-source stream processing engine for **distributed, high-performing, always-available,** and **accurate** streaming applications</p>
     <a href="{{ site.baseurl }}/introduction.html" class="btn btn-default btn-intro">Introduction to Flink</a>
   </div>
 
