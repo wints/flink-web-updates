@@ -9,10 +9,12 @@ Before we go into detail about Flink, let’s review at a higher level the _type
 
 **First, 2 types of datasets**
 
-+ Unbounded: Data that’s produced continuously and without a defined end point
-+ Bounded: Data that’s finite and should be considered complete
++ Unbounded: Infinite datasets that are appended to continuously
++ Bounded: Finite, unchanging datasets
 
-Many real-world datasets are unbounded datasets.  This is true whether the data is stored in a sequence of directories on HDFS or in a log-based system like Apache Kafka.  Examples include but are not limited to:
+Many real-word data sets that are traditionally thought of as bounded or “batch” data are in reality unbounded datasets. This is true whether the data is stored in a sequence of directories on HDFS or in a log-based system like Apache Kafka.
+
+Examples of unbounded datasets include but are not limited to:
 
 + End users interacting with mobile or web applications
 + Physical sensors providing measurements
@@ -35,19 +37,19 @@ Flink is an open-source framework for distributed stream processing that:
 
 + Provides results that are **accurate**, even in the case of out-of-order or late-arriving data
 + Is **stateful and fault-tolerant** and can seamlessly recover from failures while maintaining exactly-once application state
-+ Performs at **production scale**, running on thousands of nodes without throughput or latency tradeoffs
++ Performs at **large scale**, running on thousands of nodes with very good throughput and latency characteristics
 
 Earlier, we discussed aligning the type of dataset (bounded vs. unbounded) with the type of execution model (batch vs. streaming). Many of the Flink features listed below--state management, handling of out-of-order data, flexible windowing--are essential for computing accurate results on unbounded datasets and are enabled by Flink's streaming execution model.
 
-+ Flink guarantees **exactly-once semantics for stateful computations**. By ‘stateful’, we mean that your applications can maintain an aggregation or summary of data that has been processed over time. Flink's checkpointing mechanism ensures exactly-once semantics for an application’s state in the event of a failure.
++ Flink guarantees **exactly-once semantics for stateful computations**. ‘Stateful’ means that applications can maintain an aggregation or summary of data that has been processed over time, and Flink's checkpointing mechanism ensures exactly-once semantics for an application’s state in the event of a failure.
 
 <img class="illu" src="{{ site.baseurl }}/img/exactly_once_state.png" alt="Exactly Once State" width="389px" height="193px"/>
 
-+ Flink delivers **accurately-ordered data** by supporting stream processing and windowing with event time semantics. ‘Event time’ refers to the time that a given event actually occurred, not the time it arrives at your stream processor and makes it easy to compute over streams where events arrive out of order and where events may arrive with a delay.
++ Flink supports stream processing and windowing with **event time semantics**. Event time makes it easy to compute accurate results over streams where events arrive out of order and where events may arrive delayed.
 
 <img class="illu" src="{{ site.baseurl }}/img/out_of_order_stream.png" alt="Out Of Order Stream" width="520px" height="130px"/>
 
-+ Flink supports **flexible windowing** based on time, count, or sessions in addition to data-driven windows. Windows can be customized with flexible triggering conditions to support sophisticated streaming patterns. Said another way, Flink’s windowing makes it possible to model the reality of the environment in which data is created.
++ Flink supports **flexible windowing** based on time, count, or sessions in addition to data-driven windows. Windows can be customized with flexible triggering conditions to support sophisticated streaming patterns. Flink’s windowing makes it possible to model the reality of the environment in which data is created.
 
 <img class="illu" src="{{ site.baseurl }}/img/windows.png" alt="Windows" width="520px" height="134px"/>
 
@@ -55,16 +57,20 @@ Earlier, we discussed aligning the type of dataset (bounded vs. unbounded) with 
 
 <img class="illu" src="{{ site.baseurl }}/img/distributed_snapshots.png" alt="Snapshots" width="260px" height="306px"/>
 
-+ Flink is capable of **high throughput and low latency** (said another way: processing lots of data quickly). The charts below show the performance of Apache Flink and Apache Storm completing a distributed item counting task that requires streaming data shuffles.
++ Flink is capable of **high throughput and low latency** (processing lots of data quickly). The charts below show the performance of Apache Flink and Apache Storm completing a distributed item counting task that requires streaming data shuffles.
 
 <img class="illu" src="{{ site.baseurl }}/img/streaming_performance.png" alt="Performance" width="650px" height="232px"/>
+
++ Flink's **savepoints provide a state versioning mechanism**, making it possible to update applications or reprocess historic data with no lost state and minimal downtime.
+
+<img class="illu" src="{{ site.baseurl }}/img/savepoints.png" alt="Savepoints" width="450px" height="300px"/>
 
 + Flink is designed to run on **large-scale clusters** with many thousands of nodes, and in addition to a standalone cluster mode, Flink provides support for YARN and Mesos.
 
 <img class="illu" src="{{ site.baseurl }}/img/parallel_dataflows.png" alt="Parallel" width="695px" height="459px"/>
 
 
-## The “How”: Flink Use Cases
+## Flink Use Cases
 
 To demonstrate how a stream processor like Flink is applied to unbounded datasets, here’s a selection of real-word Flink users and problems they’re solving with Flink.
 
@@ -95,11 +101,11 @@ If you’ve reviewed Flink’s documentation, you might have noticed both a Data
 
 Earlier in this write-up, we introduced the streaming execution model (“processing that executes continuously, an event-at-a-time”) as an intuitive fit for unbounded datasets. So how do bounded datasets relate to the stream processing paradigm?
 
-In Flink’s case, the relationship is quite natural. A bounded dataset can simply be treated as a special case of an unbounded one--the bounded dataset just happens to have a clearly-defined endpoint--so it’s possible to apply all of the same streaming concepts that we’ve laid out above to finite data.
+In Flink’s case, the relationship is quite natural. A bounded dataset can simply be treated as a special case of an unbounded one, so it’s possible to apply all of the same streaming concepts that we’ve laid out above to finite data.
 
 This is exactly how Flink's DataSet API behaves. A bounded dataset is handled inside of Flink as a “finite stream”, with only a few minor differences in how Flink manages bounded vs. unbounded datasets.
 
-And so it’s possible to use Flink to process both bounded and unbounded data, with both APIs running on the same distributed streaming execution--a simple yet powerful architecture.
+And so it’s possible to use Flink to process both bounded and unbounded data, with both APIs running on the same distributed streaming execution engine--a simple yet powerful architecture.
 
 
 ## The “What”: Flink from the bottom-up
@@ -107,10 +113,10 @@ And so it’s possible to use Flink to process both bounded and unbounded data, 
 <img class="illu" src="{{ site.baseurl }}/img/flink-stack-frontpage.png" alt="Source" width="596px" height="110px"/>
 
 ### Deployment modes
-Flink can run in the cloud or on premise and on a standalone cluster or on a cluster managed by YARN and Mesos.
+Flink can run in the cloud or on premise and on a standalone cluster or on a cluster managed by YARN or Mesos.
 
 ### Runtime
-Flink’s core is a distributed streaming dataflow, meaning that data is processed an event-at-a-time rather than as a series of batches--an important distinction, as this is what enables many of Flink’s resilience and performance features that are detailed above.
+Flink’s core is a distributed streaming dataflow engine, meaning that data is processed an event-at-a-time rather than as a series of batches--an important distinction, as this is what enables many of Flink’s resilience and performance features that are detailed above.
 
 ### APIs
 
@@ -122,7 +128,7 @@ Flink’s core is a distributed streaming dataflow, meaning that data is process
 ### Libraries
 Flink also includes special-purpose libraries for <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.1/apis/streaming/libs/cep.html" target="_blank">complex event processing</a>, <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.1/apis/batch/libs/ml/index.html" target="_blank">machine learning</a>, <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.1/apis/batch/libs/gelly.html" target="_blank">graph processing</a>, and <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.2/dev/libs/storm_compatibility.html" target="_blank">Apache Storm compatibility</a>.
 
-## The Big Picture: Where does Flink fit in with other frameworks?
+## Flink and other frameworks
 
 At the most basic level, a Flink program is made up of:
 

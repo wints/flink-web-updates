@@ -36,6 +36,8 @@
             <!-- Contribute -->
             <li><a href="{{ site.baseurl }}/contribute.html">How to Contribute</a></li>
 
+            <!-- Blog -->
+            <li class="{% if page.url contains '/blog/' or page.url contains '/news/' %} active{% endif %} hidden-md hidden-sm"><a href="{{ site.baseurl }}/blog/"><b>Flink Blog</b></a></li>
 
             <hr />
 
@@ -48,9 +50,6 @@
             <li>
               <a href="{{ site.docs-stable }}" target="_blank">Documentation <small><span class="glyphicon glyphicon-new-window"></span></small></a>
             </li>
-
-            <!-- Blog -->
-            <li class="{% if page.url contains '/blog/' or page.url contains '/news/' %} active{% endif %} hidden-md hidden-sm"><a href="{{ site.baseurl }}/blog/"><b>Flink Blog</b></a></li>
 
             <!-- GitHub -->
             <li>
