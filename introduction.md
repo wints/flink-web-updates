@@ -2,6 +2,8 @@
 title: "Introduction to Apache Flink®"
 ---
 <br>
+Below is a high-level overview of Apache Flink and stream processing. For a more technical introduction, we recommend the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.1/concepts/concepts.html" target="_blank">"Concepts" page</a> in the Flink documentation.
+<br>
 {% toc %}
 
 ## Continuous Processing for Unbounded Datasets

@@ -25,4 +25,4 @@ We can tease out common threads from these use cases. Based on the examples abov
 
 4. **Data in large volumes:** These programs would need to be distributed across many nodes (in some cases, thousands) to support the required scale. Flink can run on large clusters just as seamlessly as it runs on small ones.
 
-If you'd like to see more user stories, we recommend the sessions from <a href="http://flink-forward.org/program/sessions/" target="_blank">Flink Forward 2016</a>, the annual Flink user conference.
+And for more user stories, we recommend the sessions from <a href="http://flink-forward.org/program/sessions/" target="_blank">Flink Forward 2016</a>, the annual Flink user conference.
