@@ -273,29 +273,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/js/codetabs.js"></script>
-    <script src="/js/jquery.sticky-kit.min.js"></script>
-
-    <script>
-
-      // Initialize sticky sidebar
-      if($(window).width() > 767) {
-        // Nav for desktop
-        $("#sidebar").stick_in_parent();
-
-      }
-
-      // On window resize check to see if stuff should be unstuck
-      window.onresize = function(event) {
-        if($(window).width() <= 767) {
-          $('#sidebar').trigger("sticky_kit:detach");
-        } else {
-          $('#sidebar').stick_in_parent();
-        }
-      };
-
-
-
-    </script>
+    <script src="/js/stickysidebar.js"></script>
 
 
     <!-- Google Analytics -->

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Apache Flink: Scalable Batch and Stream Data Processing</title>
+    <title>Apache Flink: Scalable Stream and Batch Data Processing</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
@@ -319,29 +319,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/js/codetabs.js"></script>
-    <script src="/js/jquery.sticky-kit.min.js"></script>
-
-    <script>
-
-      // Initialize sticky sidebar
-      if($(window).width() > 767) {
-        // Nav for desktop
-        $("#sidebar").stick_in_parent();
-
-      }
-
-      // On window resize check to see if stuff should be unstuck
-      window.onresize = function(event) {
-        if($(window).width() <= 767) {
-          $('#sidebar').trigger("sticky_kit:detach");
-        } else {
-          $('#sidebar').stick_in_parent();
-        }
-      };
-
-
-
-    </script>
+    <script src="/js/stickysidebar.js"></script>
 
 
     <!-- Google Analytics -->

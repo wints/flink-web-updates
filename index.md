@@ -1,5 +1,5 @@
 ---
-title: "Scalable Batch and Stream Data Processing"
+title: "Scalable Stream and Batch Data Processing"
 layout: base
 ---
 <div class="row-fluid">
