@@ -1,7 +1,6 @@
 ---
-title:  "Contributions Welcome!"
+title: "How To Contribute"
 ---
-
 Apache Flink is developed by an open and friendly community. Everybody is cordially welcome to join the community and contribute to Apache Flink. There are several ways to interact with the community and to contribute to Flink including asking questions, filing bug reports, proposing new features, joining discussions on the mailing lists, contributing code or documentation, improving the website, or testing release candidates.
 
 {% toc %}
@@ -31,7 +30,8 @@ Detailed information is also required, if you plan to contribute the improvement
 
 We recommend to first reach consensus with the community on whether a new feature is required and how to implement a new feature, before starting with the implementation. Some features might be out of scope of the project, and it's best to discover this early.
 
-For very big features that change Flink in a fundamental way we have another process in place: <a href="https://cwiki.apache.org/confluence/display/FLINK/Flink+Improvement+Proposals" target="_blank">Flink Improvement Proposals</a>. If you are interested you can propose a new feature there or follow the
+For very big features that change Flink in a fundamental way we have another process in place:
+[Flink Improvement Proposals](https://cwiki.apache.org/confluence/display/FLINK/Flink+Improvement+Proposals). If you are interested you can propose a new feature there or follow the
 discussions on existing proposals.
 
 -----

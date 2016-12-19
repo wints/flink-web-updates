@@ -37,21 +37,31 @@
             <li><a href="{{ site.baseurl }}/community.html">Community &amp; Project Info</a></li>
 
             <!-- Contribute -->
-            <li><a href="{{ site.baseurl }}/contribute.html">How to Contribute</a></li>
+            <li><a href="{{ site.baseurl }}/how-to-contribute.html">How to Contribute</a></li>
 
             <!-- Blog -->
             <li class="{% if page.url contains '/blog/' or page.url contains '/news/' %} active{% endif %} hidden-md hidden-sm"><a href="{{ site.baseurl }}/blog/"><b>Flink Blog</b></a></li>
 
             <hr />
 
+
+
+            <!-- Documentation -->
+            <!-- <li>
+              <a href="{{ site.docs-stable }}" target="_blank">Documentation <small><span class="glyphicon glyphicon-new-window"></span></small></a>
+            </li> -->
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Documentation
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ site.docs-stable }}" target="_blank">1.1 (Latest stable release) <small><span class="glyphicon glyphicon-new-window"></span></small></a></li>
+                  <li><a href="{{ site.docs-snapshot }}" target="_blank">1.2 (Snapshot) <small><span class="glyphicon glyphicon-new-window"></span></small></a></li>
+                </ul>
+              </li>
+
             <!-- Quickstart -->
             <li>
               <a href="{{ site.docs-stable }}/quickstart/setup_quickstart.html" target="_blank">Quickstart <small><span class="glyphicon glyphicon-new-window"></span></small></a>
-            </li>
-
-            <!-- Documentation -->
-            <li>
-              <a href="{{ site.docs-stable }}" target="_blank">Documentation <small><span class="glyphicon glyphicon-new-window"></span></small></a>
             </li>
 
             <!-- GitHub -->
